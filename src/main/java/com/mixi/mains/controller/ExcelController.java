@@ -11,6 +11,11 @@ import com.mixi.mains.model.User;
 import com.mixi.mains.service.UserService;
 import com.mixi.mains.utils.ExcelUtils;
 
+/**
+ * @Description: 导入导出Excel
+ * @author taohanlin
+ * @date 2016年8月3日 上午10:56:18
+ */
 @Controller
 public class ExcelController {
 
@@ -42,7 +47,7 @@ public class ExcelController {
   }
 
   /**
-   * @Description 导入 
+   * @Description 导入
    * @author taohanlin
    * @date 2016年6月3日 下午6:16:04
    * @action ImportDemo
@@ -50,10 +55,10 @@ public class ExcelController {
    */
   @RequestMapping("/import")
   @ResponseBody
-  public Object ImportDemo(){
-    List<User> excelIn=Lists.newArrayList();
+  public Object ImportDemo() {
+    List<User> excelIn = Lists.newArrayList();
     try {
-      excelIn  = ExcelUtils.excelIn(User.class, "D:/good/user.xls");
+      excelIn = ExcelUtils.excelIn(User.class, "D:/good/user.xls");
       if (excelIn.isEmpty()) {
         return "无数据";
       }
@@ -64,6 +69,6 @@ public class ExcelController {
       return "导入失败";
     }
     return excelIn;
-    
+
   }
 }

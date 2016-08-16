@@ -32,6 +32,19 @@ public class User {
     return age;
   }
 
+  public User(int userId, String name, int age, String password) {
+    super();
+    this.userId = userId;
+    this.name = name;
+    this.age = age;
+    this.password = password;
+  }
+
+  public User() {
+    super();
+    // TODO Auto-generated constructor stub
+  }
+
   public void setAge(int age) {
     this.age = age;
   }
